@@ -65,6 +65,7 @@
         setupScrollReveal();
         setupParticles();
         setupKeyboard();
+        initVisitorCounter();
         applyLang();
     }
 
@@ -540,6 +541,19 @@
             requestAnimationFrame(animate);
         }
         animate();
+    }
+
+    /* ── Visitor Counter ── */
+    async function initVisitorCounter() {
+        const el = document.getElementById('visitorCount');
+        if (!el) return;
+        try {
+            const resp = await fetch('https://api.counterapi.dev/v1/y1duo-github-io/visits/up');
+            const d = await resp.json();
+            el.textContent = String(d.count).padStart(6, '0');
+        } catch {
+            el.textContent = '------';
+        }
     }
 
     /* ── Keyboard Shortcuts ── */
