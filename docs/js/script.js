@@ -279,15 +279,35 @@
     /* ── Audio ── */
     const audioTracks = {};
     let currentTrack = null;
+    let audioStarted = false;
 
     function setupAudioToggle() {
-        document.getElementById('audioToggle').addEventListener('click', () => {
+        const btn = document.getElementById('audioToggle');
+
+        const startOnce = () => {
+            if (audioStarted) return;
+            audioStarted = true;
+            isMuted = false;
+            playCurrentThemeAudio();
+            btn.textContent = '🔊';
+            document.removeEventListener('click', startOnce);
+        };
+
+        document.addEventListener('click', startOnce);
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!audioStarted) {
+                startOnce();
+                return;
+            }
             isMuted = !isMuted;
-            document.getElementById('audioToggle').textContent = isMuted ? '🔇' : '🔊';
             if (isMuted) {
-                if (currentTrack) fadeAudio(currentTrack, 0, 500, true);
+                if (currentTrack) fadeAudio(currentTrack, 0, 400);
+                btn.textContent = '🔇';
             } else {
                 playCurrentThemeAudio();
+                btn.textContent = '🔊';
             }
         });
     }
@@ -318,7 +338,7 @@
     }
 
     function updateAudioTrack() {
-        if (!isMuted) playCurrentThemeAudio();
+        if (audioStarted && !isMuted) playCurrentThemeAudio();
     }
 
     function updateAudioVolume() {
