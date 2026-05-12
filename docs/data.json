@@ -1,0 +1,96 @@
+{
+  "personal": {
+    "name": "Dora",
+    "displayName": { "en": "Dora", "zh": "朵拉" },
+    "tags": [
+      { "en": "Piano Player", "zh": "钢琴演奏者", "icon": "fas fa-music" },
+      { "en": "Bookworm", "zh": "书虫", "icon": "fas fa-book" },
+      { "en": "Gamer", "zh": "游戏玩家", "icon": "fas fa-gamepad" },
+      { "en": "Dreamer", "zh": "追梦人", "icon": "fas fa-star" }
+    ],
+    "bio": {
+      "en": "Hi, I'm Dora! A girl who lives between the ocean and the forest, between melodies and daydreams.\n\nWhen I'm not lost in a book or exploring virtual worlds, you'll find me at the piano — playing Chopin, Debussy, or just improvising whatever my heart feels like. Music is my favorite way to breathe.\n\nI believe life is like a beautiful melody — sometimes gentle like ocean waves, sometimes lively like a forest breeze. Every day is a new page to fill with stories, laughter, and a little bit of magic.",
+      "zh": "嗨，我是朵拉！一个生活在海洋和森林之间、旋律和白日梦之间的女孩。\n\n不在书里迷路、不在虚拟世界探险的时候，你会发现我坐在钢琴前——弹肖邦、德彪西，或者随心所欲地即兴演奏。音乐是我最喜欢的呼吸方式。\n\n我相信生活就像一首美妙的旋律——有时温柔如海浪，有时活泼如林间的微风。每一天都是新的一页，等着被故事、欢笑和一点点魔法填满。"
+    },
+    "contact": [
+      {
+        "type": "github",
+        "icon": "fab fa-github",
+        "label": "GitHub @y1duo",
+        "url": "https://github.com/y1duo"
+      }
+    ]
+  },
+  "life": {
+    "title": { "en": "My Life", "zh": "我的生活" },
+    "items": [
+      {
+        "icon": "fas fa-gamepad",
+        "title": { "en": "Gaming", "zh": "游戏" },
+        "text": {
+          "en": "I love exploring virtual worlds — from cozy life sims to epic adventures. Gaming is where I unwind, challenge myself, and live a thousand different lives.",
+          "zh": "我喜欢探索虚拟世界——从温馨的生活模拟到史诗级冒险。游戏是我放松、挑战自己、体验千种不同人生的地方。"
+        }
+      },
+      {
+        "icon": "fas fa-music",
+        "title": { "en": "Piano", "zh": "钢琴" },
+        "text": {
+          "en": "The piano is my closest companion. Classical pieces fill my room on quiet afternoons — Debussy's moonlight, Chopin's nocturnes. Each note is a small world of its own.",
+          "zh": "钢琴是我最亲密的伙伴。安静的午后，古典乐曲充满整个房间——德彪西的月光、肖邦的夜曲。每一个音符都是一个小小的世界。"
+        }
+      },
+      {
+        "icon": "fas fa-book-open",
+        "title": { "en": "Reading", "zh": "阅读" },
+        "text": {
+          "en": "Books are portals to infinite worlds. I curl up with a good story whenever I can — fantasy, poetry, or anything that makes my imagination dance.",
+          "zh": "书是通往无限世界的传送门。只要有机会，我就会窝在一个角落里读一个好故事——奇幻、诗歌，或任何能让想象力起舞的东西。"
+        }
+      }
+    ]
+  },
+  "gallery": {
+    "items": [
+      {
+        "image": "images/gallery-piano.webp",
+        "label": { "en": "Piano Time", "zh": "钢琴时光" },
+        "caption": {
+          "en": "The world fades away when the music begins...",
+          "zh": "当音乐响起，世界都安静了..."
+        }
+      },
+      {
+        "image": "images/gallery-gaming.webp",
+        "label": { "en": "Gaming Night", "zh": "游戏之夜" },
+        "caption": {
+          "en": "One more level... okay, maybe ten more.",
+          "zh": "再打一关……好吧，也许再打十关。"
+        }
+      },
+      {
+        "image": "images/gallery-reading.webp",
+        "label": { "en": "Reading Corner", "zh": "阅读角落" },
+        "caption": {
+          "en": "Lost in a story, found in a dream.",
+          "zh": "在故事里迷路，在梦里找到方向。"
+        }
+      }
+    ]
+  },
+  "guestbook": {
+    "title": { "en": "Guestbook", "zh": "留言板" },
+    "message": {
+      "en": "I'm so happy to make friends!",
+      "zh": "我很开心交朋友！"
+    },
+    "presetMessages": [
+      {
+        "name": "Keta",
+        "avatar": "fas fa-code",
+        "text": { "en": "Best sister ever! Keep shining! ^^", "zh": "最棒的妹妹！继续发光！^^" },
+        "date": "2026-05-12"
+      }
+    ]
+  }
+}

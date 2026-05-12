@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dora</title>
+    <meta name="description" content="Dora's personal page — a dreamy world between ocean and forest.">
+    <meta property="og:title" content="Dora">
+    <meta property="og:description" content="A dreamy world between ocean and forest.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/avatar.webp" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-mixed">
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <p class="loading-title">Dora</p>
+            <div class="loading-bar"><div class="loading-fill" id="loadingFill"></div></div>
+            <p class="loading-text" data-en="Entering the dream..." data-zh="进入梦境...">Entering the dream...</p>
+        </div>
+    </div>
+
+    <div class="page-bg" id="pageBg">
+        <img src="images/banner-ocean.webp" class="page-bg-img page-bg-ocean active" alt="">
+        <img src="images/banner-forest.webp" class="page-bg-img page-bg-forest active" alt="">
+        <div class="page-bg-night"></div>
+        <div class="page-bg-tint"></div>
+    </div>
+    <div class="theme-overlay" id="themeOverlay"></div>
+    <canvas id="particles"></canvas>
+
+    <div class="scroll-progress"><div class="scroll-progress-fill" id="scrollFill"></div></div>
+
+    <nav class="pixel-nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" data-en="Dora" data-zh="朵拉">Dora</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link active" data-section="about">
+                    <span data-en="About" data-zh="关于">About</span>
+                </a>
+                <a href="#life" class="nav-link" data-section="life">
+                    <span data-en="Life" data-zh="生活">Life</span>
+                </a>
+                <a href="#gallery" class="nav-link" data-section="gallery">
+                    <span data-en="Gallery" data-zh="相册">Gallery</span>
+                </a>
+                <a href="#guestbook" class="nav-link" data-section="guestbook">
+                    <span data-en="Guestbook" data-zh="留言板">Guestbook</span>
+                </a>
+            </div>
+            <div class="nav-controls">
+                <div class="theme-switcher" id="themeSwitcher">
+                    <button class="theme-btn" data-theme="ocean" title="Ocean">🌊</button>
+                    <button class="theme-btn active" data-theme="mixed" title="Mixed">🌈</button>
+                    <button class="theme-btn" data-theme="forest" title="Forest">🌿</button>
+                </div>
+                <button class="icon-btn" id="nightToggle" title="Day/Night">🌙</button>
+                <button class="icon-btn" id="audioToggle" title="Sound">🔇</button>
+                <button class="lang-btn" id="langSwitcher">
+                    <span id="currentLang">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero-decoration hero-deco-left">
+            <span class="deco-bubble">🐚</span>
+            <span class="deco-bubble">🫧</span>
+            <span class="deco-bubble">🐠</span>
+        </div>
+        <h1 class="hero-title" data-en="Dora" data-zh="朵拉">Dora</h1>
+        <p class="hero-tagline" data-en="piano player · bookworm · dreamer" data-zh="钢琴演奏者 · 书虫 · 追梦人">piano player · bookworm · dreamer</p>
+        <div class="hero-decoration hero-deco-right">
+            <span class="deco-leaf">🍃</span>
+            <span class="deco-leaf">🌸</span>
+            <span class="deco-leaf">🦋</span>
+        </div>
+    </header>
+
+    <section id="about" class="game-panel panel-ocean">
+        <div class="panel-header">
+            <span class="panel-icon">🐚</span>
+            <h2 data-en="About Me" data-zh="关于我">About Me</h2>
+        </div>
+        <div class="panel-body">
+            <div class="about-grid">
+                <div class="avatar-frame">
+                    <img src="images/avatar.webp" class="pixel-avatar" alt="Dora">
+                    <div class="avatar-sparkles">
+                        <span class="sparkle">✨</span>
+                        <span class="sparkle">✨</span>
+                        <span class="sparkle">✨</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-tags" id="aboutTags"></div>
+                    <div class="about-bio" id="aboutBio"></div>
+                    <div class="about-contact" id="aboutContact"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <span class="divider-wave">🌊</span>
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🍃</span>
+    </div>
+
+    <section id="life" class="game-panel panel-forest">
+        <div class="panel-header">
+            <span class="panel-icon">🌿</span>
+            <h2 data-en="My Life" data-zh="我的生活">My Life</h2>
+        </div>
+        <div class="panel-body">
+            <div class="life-grid" id="lifeGrid"></div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <span class="divider-wave">🐠</span>
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🦋</span>
+    </div>
+
+    <section id="gallery" class="gallery-wall">
+        <div class="gallery-header">
+            <span class="panel-icon">🖼️</span>
+            <h2 data-en="Gallery" data-zh="相册">Gallery</h2>
+        </div>
+        <div class="gallery-inner" id="galleryInner"></div>
+    </section>
+
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <div class="lightbox-frame">
+                <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            </div>
+            <div class="lightbox-caption">
+                <p class="lightbox-text" id="lightboxText"></p>
+            </div>
+            <button class="lightbox-close" id="lightboxClose">✕</button>
+        </div>
+    </div>
+
+    <div class="section-divider">
+        <span class="divider-wave">🫧</span>
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🌸</span>
+    </div>
+
+    <section id="calendar" class="game-panel panel-ocean">
+        <div class="panel-header">
+            <span class="panel-icon">📅</span>
+            <h2 data-en="Calendar" data-zh="日历">Calendar</h2>
+        </div>
+        <div class="panel-body">
+            <div class="mini-calendar" id="miniCalendar"></div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <span class="divider-wave">🐚</span>
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🍃</span>
+    </div>
+
+    <section id="guestbook" class="game-panel panel-forest">
+        <div class="panel-header">
+            <span class="panel-icon">💌</span>
+            <h2 data-en="Guestbook" data-zh="留言板">Guestbook</h2>
+        </div>
+        <div class="panel-body">
+            <div class="guestbook-message" id="guestbookMessage"></div>
+            <div class="guestbook-entries" id="guestbookEntries"></div>
+            <div class="guestbook-giscus" id="giscusContainer"></div>
+        </div>
+    </section>
+
+    <footer class="pixel-footer">
+        <div class="footer-content">
+            <div class="footer-links" id="footerLinks"></div>
+            <p class="footer-message" data-en="I'm so happy to make friends!" data-zh="我很开心交朋友！">I'm so happy to make friends!</p>
+            <p class="footer-shortcuts" data-en="O Ocean · F Forest · M Mixed · N Night · S Sound" data-zh="O 海洋 · F 森林 · M 混合 · N 日夜 · S 声音">O Ocean · F Forest · M Mixed · N Night · S Sound</p>
+            <p class="footer-text" data-en="Built with 🩵 and hosted on GitHub Pages" data-zh="用 🩵 构建，托管于 GitHub Pages">Built with 🩵 and hosted on GitHub Pages</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
